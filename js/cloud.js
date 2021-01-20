@@ -6,13 +6,15 @@ class Cloud {
   cloudSpeed = 3;
   cloudMovenment = 200;
   randomizeCloudSpeed = 0;
+  ctx = null;
 
   // Random cloud forms
   randomCloud1 = 0;
   randomCloud2 = 0;
   randomCloud3 = 0;
 
-  constructor() {
+  constructor(ctx) {
+    this.ctx = ctx;
     this.randomCloudPositionAtY = this.randomNumber(300);
     this.randomCloudPositionAtX = this.randomNumber(300);
 
@@ -32,29 +34,29 @@ class Cloud {
     }
 
     way = (this.cloudMovenment + this.randomCloudPositionAtX) * this.cloudSpeed;
-    ctx.beginPath();
-    ctx.arc(150 + way, this.randomCloudPositionAtY + this.randomCloud1, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill()
-    ctx.closePath();
+    this.ctx.beginPath();
+    this.ctx.arc(150 + way, this.randomCloudPositionAtY + this.randomCloud1, 25, 0, 2 * Math.PI);
+    this.ctx.fillStyle = 'white';
+    this.ctx.fill()
+    this.ctx.closePath();
 
-    ctx.beginPath();
-    ctx.arc(170 + way, this.randomCloudPositionAtY + this.randomCloud2, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill()
-    ctx.closePath();
+    this.ctx.beginPath();
+    this.ctx.arc(170 + way, this.randomCloudPositionAtY + this.randomCloud2, 25, 0, 2 * Math.PI);
+    this.ctx.fillStyle = 'white';
+    this.ctx.fill()
+    this.ctx.closePath();
 
-    ctx.beginPath();
-    ctx.arc(130 + way, this.randomCloudPositionAtY + this.randomCloud3, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill()
-    ctx.closePath();
+    this.ctx.beginPath();
+    this.ctx.arc(130 + way, this.randomCloudPositionAtY + this.randomCloud3, 25, 0, 2 * Math.PI);
+    this.ctx.fillStyle = 'white';
+    this.ctx.fill()
+    this.ctx.closePath();
 
-    ctx.beginPath();
-    ctx.arc(200 + way, this.randomCloudPositionAtY + this.randomCloud3, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill()
-    ctx.closePath();
+    this.ctx.beginPath();
+    this.ctx.arc(200 + way, this.randomCloudPositionAtY + this.randomCloud3, 25, 0, 2 * Math.PI);
+    this.ctx.fillStyle = 'white';
+    this.ctx.fill()
+    this.ctx.closePath();
   }
 
   randomNePo() {
